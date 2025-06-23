@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Homepage = () => {
+const Footer = () => {
   return (
     <div>
           <h1>Navbar</h1>
@@ -8,4 +8,4 @@ const Homepage = () => {
   )
 }
 
-export default Homepage
+export default Footer

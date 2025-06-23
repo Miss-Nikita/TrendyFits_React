@@ -1,36 +1,24 @@
-import React from 'react'
-import AOS from 'aos'
-import "aos/dist/aos.css";
-import { useEffect, useState } from 'react';
-
-
-
+import React from "react";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
+import Homepage from "./pages/Homepage/Homepage";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import Cart from "./Components/Cart/Cart";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
-
-  const [orderPopup,setOrderPopup] = useState(false)
-
-  const handleOrderPopup = () =>{
-    setOrderPopup(!orderPopup)
-  };
-useEffect(() =>{
-  AOS.init({
-    offset:100,
-    duration:800,
-    easing:"ease-in-sine",
-    delay:100,
-  })
-  AOS.refresh()
-},[])
-
   return (
-    <div className="bg-primary text-white h-screen flex items-center justify-center">
-    <h1 className="text-4xl font-bold">🚀 Tailwind + Vite is Working!</h1>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+      <Footer />
+      <h1>ufdgiudhfisu</h1>
+    </div>
+  );
+};
 
-
-    
-  </div>
-  )
-}
-
-export default App
+export default App;
