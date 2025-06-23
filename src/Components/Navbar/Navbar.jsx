@@ -1,11 +1,37 @@
-import React from 'react'
+import React from "react";
+import { BiCart, BiUser } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
-      <h1>Navbar</h1>
-    </div>
-  )
-}
+      <div className="navbar">
+   <Link to="/">
+      <div className="logo">
+        <h2>TrendyFits</h2>
+      </div>
+   </Link>
+      <div className="links">
+        <ul>
+          <li>Home</li>
+          <li>Product</li>
+          <li>Contact</li>
+          <li>App</li>
+        </ul>
+      </div>
+      <div className="nav_icon_wrapper">
+        <Link to="/cart">
+          <div className="nav_cart">
+            <BiCart className="nav_icon" />
+            <p>0</p>
+          </div>
+        </Link>
 
-export default Navbar
+        <BiUser className="nav_icon" />
+      </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

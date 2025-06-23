@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
-      <h1>ufdgiudhfisu</h1>
+  
     </div>
   );
 };
