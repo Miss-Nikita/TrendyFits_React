@@ -1,9 +1,11 @@
 import React from 'react'
+import Hero from '../../Components/Hero/Hero'
 
 const Homepage = () => {
   return (
     <div>
-          <h1 className='font-extrabold'>HomePage</h1>
+      <Hero/>
+         
     </div>
   )
 }

@@ -1,14 +1,15 @@
 import React from "react";
 import { BiCart, BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
+// import './Navbar.css'
 
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar flex justify-between px-8 gap-20">
+      <div className=" navbar flex justify-between px-8 gap-20">
    <Link to="/">
       <div className="logo">
-        <h2 className="  underline text-2xl p-6">TrendyFits</h2>
+        <h2 className="  underline text-2xl  p-6">TrendyFits</h2>
       </div>
    </Link>
       <div className="links p-32 py-8 flex justify-between ">
@@ -23,7 +24,7 @@ const Navbar = () => {
         <Link to="/cart">
           <div className="nav_cart flex relative cursor-pointer  ">
             <BiCart className=" nav_icon text-[34px] ml-[35px] " />
-            <p className="bg-red-700 absolute r-[-18px]  h-[20px] w-[20px]  text-white flex justify-center items-center  ">0</p>
+            <p className="bg-red-700 absolute r-[-18px]  h-[20px] w-[20px] right-[-8px] rounded-full text-white flex justify-center items-center  ">0</p>
           </div>
         </Link>
 
