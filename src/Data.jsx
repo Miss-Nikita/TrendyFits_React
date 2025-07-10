@@ -6,10 +6,10 @@ import image5 from "./assets/Head-5.avif";
 import image6 from "./assets/Head-6.avif";
 import image7 from "./assets/Head-7.avif";
 import image8 from "./assets/Head-8.avif";
-import image9 from "./assets/Head-9.avif";
-import image10 from "./assets/Head-10.avif";
-import image11 from "./assets/Head-11.avif";
-import image12 from "./assets/Head-12.avif";
+import image9 from "./assets/Head-9.jpg";
+import image10 from "./assets/Head-10.jpg";
+import image11 from "./assets/Head-11.jpg";
+import image12 from "./assets/Head-12.jpg";
 
 
 export const productData = [
