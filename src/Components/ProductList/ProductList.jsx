@@ -13,12 +13,12 @@ const ProductList = () => {
                 products.map((product) => {
                   const {id , image, title, price} = product
                   return(
-                    <div className="product-card" key={id}>
+                    <div className="product-card bg-white border-[1px solid #e0e0e0] border-r-[8px] " key={id}>
                      <Link to={`/product/${product.id}`} key={product.id} > 
-                      <img src={image} alt="" />
+                      <img src={image} alt="" className="product-image max-w-full border-r-8 mb-[10px] h-[250px] scale-90 transition-transform duration-200 ease-in-out hover:scale-100" />
                       <div className="product-info">
-                        <h4>{title}</h4>
-                        <p>${price} </p>
+                        <h4 className='text-[1.2erem] mt-[10px] mb-[5px] text-[#333]  '>{title}</h4>
+                        <p className='text-[1rem]  '>${price} </p>
                       </div></Link>
                       <button>Add To Cart</button>
                     </div>
