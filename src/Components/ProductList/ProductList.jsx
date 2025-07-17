@@ -18,9 +18,9 @@ const ProductList = () => {
                       <img src={image} alt="" className="product-image max-w-full border-r-8 mb-[10px] h-[250px] scale-90 transition-transform duration-200 ease-in-out hover:scale-100" />
                       <div className="product-info">
                         <h4 className='text-[1.2erem] mt-[10px] mb-[5px] text-[#333]  '>{title}</h4>
-                        <p className='text-[1rem]  '>${price} </p>
+                        <p className='text-[1rem] text-[#888]  '>${price} </p>
                       </div></Link>
-                      <button>Add To Cart</button>
+                      <button  className='add-to-cart block w-full p-[10px] bg-white text-black rounded-[1px] border border-[#ff5500] border-r-[5px] cursor-pointer text-[1rem] mt-[10px] transition-colors duration-300 ease-in-out  hover:bg-[#ff5a50] ' >Add To Cart</button>
                     </div>
                   )
                 })
