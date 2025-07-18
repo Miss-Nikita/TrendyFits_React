@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BiCart, BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { ShopContext } from "../ShopContext/ShopContext";
 // import './Navbar.css'
 
 const Navbar = () => {
+  const {quantity} = useContext(ShopContext)
   return (
     <div>
       <div className=" navbar flex justify-between px-8 gap-20">
@@ -24,7 +26,7 @@ const Navbar = () => {
         <Link to="/cart">
           <div className="nav_cart flex relative cursor-pointer  ">
             <BiCart className=" nav_icon text-[34px] ml-[35px] " />
-            <p className="bg-red-700 absolute r-[-18px]  h-[20px] w-[20px] right-[-8px] rounded-full text-white flex justify-center items-center  ">0</p>
+            <p className="bg-red-700 absolute r-[-18px]  h-[20px] w-[20px] right-[-8px] rounded-full text-white flex justify-center items-center  ">{quantity}</p>
           </div>
         </Link>
 
