@@ -1,2 +1,48 @@
 
 
+.cart-header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.cart-header span{
+    font-style: 20px;
+    margin-left: 90px;
+}
+.cart_item_remove {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer; /* optional: makes it look clickable */
+}
+.product_info p{
+    color: #888;
+    margin: 5px 0;
+}
+
+.quantity button{
+    width: 30px;
+    height: 30px;
+    background: #f0f0f0;
+    border:none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+font-size: 18px;
+}
+
+.quantity span{
+    margin: 0 10px;
+}
+.price .total{
+    font-size: 16px;
+    color: #333;
+}
+.summary_item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
