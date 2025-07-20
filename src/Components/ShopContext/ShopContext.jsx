@@ -11,64 +11,85 @@ const ShopContextProvider = ({ children }) => {
 
   // Calculate total price
   useEffect(() => {
-    const totalPrice = cart.reduce((acc, item) => {
-      const price = parseFloat(item.price);
-      if (isNaN(price)) return acc;
-      return acc + price * item.amount;
+    const total = cart.reduce((accumulator, currentItem) => {
+      const priceAsNumber = parseFloat(currentItem.price);
+      if (isNaN(priceAsNumber)) return accumulator;
+      return accumulator + priceAsNumber * currentItem.amount;
     }, 0);
-    setTotal(totalPrice);
+    setTotal(total);
   }, [cart]);
 
-  // Calculate total quantity
+  
+ 
+
+  // Calculate  quantity of item in cart
   useEffect(() => {
-    const totalQty = cart.reduce((acc, item) => acc + item.amount, 0);
-    setQuantity(totalQty);
+    if (cart) {
+      const amount = cart.reduce((accumulator, currentItem) => {
+        return accumulator + currentItem.amount;
+      }, 0);
+      setQuantity(amount);
+    }
   }, [cart]);
 
-  // Add item to cart
+  // function to add to cart
   const addToCart = (product, id) => {
     const newItem = { ...product, amount: 1 };
-    const cartItem = cart.find((item) => item.id === id);
+
+    const cartItem = cart.find((item) => {
+      return item.id === id;
+    });
 
     if (cartItem) {
-      const updatedCart = cart.map((item) =>
-        item.id === id ? { ...item, amount: cartItem.amount + 1 } : item
-      );
-      setCart(updatedCart);
-    } else {
-      setCart([...cart, newItem]);
+      const newCart = [...cart].map((item) => {
+        if (item.id === id) {
+          return { ...item, amount: cartItem.amount + 1 };
+        } else {
+          return item;
+        }
+      })
+      setCart(newCart)
+    }else{
+      setCart([...cart,newItem])
     }
   };
 
-  // Remove item from cart
+  // function to Remove item from cart
   const removeFromCart = (id) => {
-    const updatedCart = cart.filter((item) => item.id !== id);
-    setCart(updatedCart);
+    const newCart = cart.filter((item) => item.id !== id);
+    setCart(newCart);
   };
 
-  // Clear entire cart
+  // Function to Clear entire cart
   const clearCart = () => {
     setCart([]);
   };
 
-  // Increase item quantity
+  //Function to Increase item quantity
   const increaseAmount = (id) => {
-    const item = cart.find((item) => item.id === id);
-    if (item) addToCart(item, id);
+    const cartItem = cart.find((item) => item.id === id);
+    addToCart(cartItem, id);
   };
 
   // Decrease item quantity
-  const decreaseAmount = (id) => {
-    const item = cart.find((item) => item.id === id);
-    if (item && item.amount > 1) {
-      const updatedCart = cart.map((item) =>
-        item.id === id ? { ...item, amount: item.amount - 1 } : item
-      );
-      setCart(updatedCart);
-    } else {
-      removeFromCart(id);
-    }
-  };
+const decreaseAmount = (id) => {
+  const cartItem = cart.find((item) => item.id === id);
+
+  if (!cartItem) return;
+
+  if (cartItem.amount > 1) {
+    const newCart = cart.map((item) => {
+      if (item.id === id) {
+        return { ...item, amount: item.amount - 1 };
+      }
+      return item;
+    });
+    setCart(newCart);
+  } else {
+    removeFromCart(id);
+  }
+};
+
 
   return (
     <ShopContext.Provider
