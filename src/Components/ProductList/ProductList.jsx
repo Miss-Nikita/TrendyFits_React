@@ -19,7 +19,7 @@ const ProductList = () => {
                   className="product-card bg-white border border-[#e0e0e0] rounded-md shadow-sm p-4 transition-all duration-300 hover:shadow-md"
                 >
                   <Link to={`/product/${id}`}>
-                    <img
+                    <img 
                       src={image}
                       alt=""
                       className="product-image max-w-full mx-auto mb-[10px] h-[250px] scale-100 transition-transform duration-200 ease-in-out hover:scale-110"
