@@ -8,15 +8,24 @@ const ProductDetails = () => {
 
   const {id} = useParams()
 
-  const Product = productData.find(product =>{
+  const product = productData.find(product =>{
     return product.id === parseInt(id)
   })
   return (
     <div>
          
-         <div className="product-details-container">
-          <div className="details-left"></div>
-          <div className="details-right"></div>
+         <div className="product-details flex p-[80px] ">
+          <div className="details-left">
+            <img className='w-[460px]' src={product.image} alt="" />
+          </div>
+
+
+          <div className="details-right p-[70px] ">
+            <h3 className='text-[30px] ' >{product.title} </h3>
+            <p className="product_price text-[22px] text-red-600 mt-[10px] ">${product.price} </p>
+            <p className="product_desc text-[20px] text-[#666] mt-[15px] ">{product.description} </p>
+            <button className='  ' onClick={() =>addToCart(product, id)}>Add To Cart</button>
+          </div>
          </div>
     </div>
   )
