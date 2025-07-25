@@ -8,8 +8,8 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 const App = () => {
   const location = useLocation();
-  // Check if the current path matches /product/:id
-  const hideFooter = /^\/product\/[\w-]+$/.test(location.pathname);
+  // Hide Footer on /product/:id and /cart
+  const hideFooter = /^\/product\/[\w-]+$/.test(location.pathname) || location.pathname === "/cart";
 
   return (
     <div>
